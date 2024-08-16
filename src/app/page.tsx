@@ -43,7 +43,7 @@ export default function Page() {
                 <Input id="password" type="password" required />
               </div>
               <Button type="submit" className="w-full">
-                Login
+                <Link href="/reporting">Login</Link>
               </Button>
             </div>
             <div className="mt-4 text-center text-sm">

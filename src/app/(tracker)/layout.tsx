@@ -10,16 +10,18 @@ import {
     Search,
     ShoppingCart,
     Users,
+    Settings,
+    HeartHandshake,
+    CircleCheckBig,
+    Grid2x2Check,
+    Waypoints,
+    Table,
+    Route,
+    ChartBarIncreasing,
+    Send
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -32,61 +34,99 @@ import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+    return (
+        <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
             <div className="hidden border-r bg-muted/40 md:block">
                 <div className="flex h-full max-h-screen flex-col gap-2">
                     <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
                         <Link href="/" className="flex items-center gap-2 font-semibold">
                             <Package2 className="h-6 w-6" />
-                            <span className="">Acme Inc</span>
                         </Link>
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 relative">
                         <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
                             <Link
                                 href="#"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
-                                <Home className="h-4 w-4" />
-                                Dashboard
+                                <Search className="h-4 w-4" />
+                                Search
                             </Link>
                             <Link
                                 href="#"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
-                                <ShoppingCart className="h-4 w-4" />
-                                Orders
-                                <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                                    6
-                                </Badge>
+                                <Settings className="h-4 w-4" />
+                                Workspace Setting
+                            </Link>
+                            <Link
+                                href="#"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                            >
+                                <HeartHandshake className="h-4 w-4" />
+                                Getting Started
+                            </Link>
+                            <Link
+                                href="#"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                            >
+                                <CircleCheckBig className="h-4 w-4" />
+                                Reporting
                             </Link>
                             <Link
                                 href="#"
                                 className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
                             >
-                                <Package className="h-4 w-4" />
-                                Products{" "}
+                                <Grid2x2Check className="h-4 w-4" />
+                                Campaign
+                            </Link>
+                            <Link
+                                href="#"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                            >
+                                <Waypoints className="h-4 w-4" />
+                                Call Flows
+                            </Link>
+                            <Link
+                                href="#"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                            >
+                                <Table className="h-4 w-4" />
+                                Phone Numbers
+                            </Link>
+                            <Link
+                                href="#"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                            >
+                                <Route className="h-4 w-4" />
+                                Destinations
                             </Link>
                             <Link
                                 href="#"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
                                 <Users className="h-4 w-4" />
-                                Customers
+                                Buyers
                             </Link>
                             <Link
                                 href="#"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
-                                <LineChart className="h-4 w-4" />
-                                Analytics
+                                <ChartBarIncreasing className="h-4 w-4" />
+                                Vendors
                             </Link>
-                            <div className="felx">
+                            <Link
+                                href="#"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                            >
+                                <Send className="h-4 w-4" />
+                                Traffic Source
+                            </Link>
+                            <div className="felx absolute bottom-[50px]">
                                 <DropdownMenu>
                                     <DropdownMenuTrigger asChild>
                                         <Button variant="secondary" size="icon" className="rounded-full">
@@ -125,80 +165,102 @@ export default function RootLayout({
                             <nav className="grid gap-2 text-lg font-medium">
                                 <Link
                                     href="#"
-                                    className="flex items-center gap-2 text-lg font-semibold"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
-                                    <Package2 className="h-6 w-6" />
-                                    <span className="sr-only">Acme Inc</span>
+                                    <Search className="h-4 w-4" />
+                                    Search
                                 </Link>
                                 <Link
                                     href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
-                                    <Home className="h-5 w-5" />
-                                    Dashboard
+                                    <Settings className="h-4 w-4" />
+                                    Workspace Setting
                                 </Link>
                                 <Link
                                     href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
-                                    <ShoppingCart className="h-5 w-5" />
-                                    Orders
-                                    <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                                        6
-                                    </Badge>
+                                    <HeartHandshake className="h-4 w-4" />
+                                    Getting Started
                                 </Link>
                                 <Link
                                     href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
-                                    <Package className="h-5 w-5" />
-                                    Products
+                                    <CircleCheckBig className="h-4 w-4" />
+                                    Reporting
                                 </Link>
                                 <Link
                                     href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                                    className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
                                 >
-                                    <Users className="h-5 w-5" />
-                                    Customers
+                                    <Grid2x2Check className="h-4 w-4" />
+                                    Campaign
                                 </Link>
                                 <Link
                                     href="#"
-                                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
-                                    <LineChart className="h-5 w-5" />
-                                    Analytics
+                                    <Waypoints className="h-4 w-4" />
+                                    Call Flows
                                 </Link>
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger asChild>
-                                        <Button variant="secondary" size="icon" className="rounded-full">
-                                            <CircleUser className="h-5 w-5" />
-                                            <span className="sr-only">Toggle user menu</span>
-                                        </Button>
-                                    </DropdownMenuTrigger>
-                                    <DropdownMenuContent align="end">
-                                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                                        <DropdownMenuSeparator />
-                                        <DropdownMenuItem>Settings</DropdownMenuItem>
-                                        <DropdownMenuItem>Support</DropdownMenuItem>
-                                        <DropdownMenuSeparator />
-                                        <DropdownMenuItem>Logout</DropdownMenuItem>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
+                                <Link
+                                    href="#"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                                >
+                                    <Table className="h-4 w-4" />
+                                    Phone Numbers
+                                </Link>
+                                <Link
+                                    href="#"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                                >
+                                    <Route className="h-4 w-4" />
+                                    Destinations
+                                </Link>
+                                <Link
+                                    href="#"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                                >
+                                    <Users className="h-4 w-4" />
+                                    Buyers
+                                </Link>
+                                <Link
+                                    href="#"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                                >
+                                    <ChartBarIncreasing className="h-4 w-4" />
+                                    Vendors
+                                </Link>
+                                <Link
+                                    href="#"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                                >
+                                    <Send className="h-4 w-4" />
+                                    Traffic Source
+                                </Link>
+                                <div className="felx absolute bottom-[50px]">
+                                    <DropdownMenu>
+                                        <DropdownMenuTrigger asChild>
+                                            <Button variant="secondary" size="icon" className="rounded-full">
+                                                <CircleUser className="h-5 w-5" />
+                                                <span className="sr-only">Toggle user menu</span>
+                                            </Button>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent align="end">
+                                            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                                            <DropdownMenuSeparator />
+                                            <DropdownMenuItem>Settings</DropdownMenuItem>
+                                            <DropdownMenuItem>Support</DropdownMenuItem>
+                                            <DropdownMenuSeparator />
+                                            <DropdownMenuItem>Logout</DropdownMenuItem>
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
+                                </div>
                             </nav>
                         </SheetContent>
                     </Sheet>
-                    <div className="w-full flex-1">
-                        <form>
-                            <div className="relative">
-                                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                                <Input
-                                    type="search"
-                                    placeholder="Search products..."
-                                    className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
-                                />
-                            </div>
-                        </form>
-                    </div>
                     <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
                         <Bell className="h-4 w-4" />
                         <span className="sr-only">Toggle notifications</span>
@@ -207,5 +269,5 @@ export default function RootLayout({
                 {children}
             </div>
         </div>
-  );
+    );
 }
