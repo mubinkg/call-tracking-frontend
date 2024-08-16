@@ -2,13 +2,9 @@ import Link from "next/link"
 import {
     Bell,
     CircleUser,
-    Home,
-    LineChart,
     Menu,
-    Package,
     Package2,
     Search,
-    ShoppingCart,
     Users,
     Settings,
     HeartHandshake,
@@ -32,6 +28,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { ToggleMode } from "@/app-component/ToggleMode"
 
 export default function RootLayout({
     children,
@@ -261,10 +258,11 @@ export default function RootLayout({
                             </nav>
                         </SheetContent>
                     </Sheet>
-                    <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
-                        <Bell className="h-4 w-4" />
+                    <Button variant="outline" size="icon" className="ml-auto">
+                        <Bell className="h-[1rem] w-[1rem] scale-100" />
                         <span className="sr-only">Toggle notifications</span>
                     </Button>
+                    <ToggleMode/>
                 </header>
                 {children}
             </div>
