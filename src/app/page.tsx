@@ -17,7 +17,7 @@ export default function Page() {
       <div className="flex items-center justify-center mt-[25vh]">
         <Card className="mx-auto max-w-sm">
           <CardHeader>
-            <CardTitle className="text-2xl">Login</CardTitle>
+            <CardTitle className="text-2xl text-center">Login</CardTitle>
             <CardDescription>
               Enter your email below to login to your account
             </CardDescription>
@@ -48,7 +48,7 @@ export default function Page() {
             </div>
             <div className="mt-4 text-center text-sm">
               Don&apos;t have an account?{" "}
-              <Link href="#" className="underline">
+              <Link href="/sign-up" className="underline">
                 Sign up
               </Link>
             </div>
