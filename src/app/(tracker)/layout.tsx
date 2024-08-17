@@ -68,15 +68,15 @@ export default function RootLayout({
                                 Getting Started
                             </Link>
                             <Link
-                                href="#"
+                                href="/reporting"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
                                 <CircleCheckBig className="h-4 w-4" />
                                 Reporting
                             </Link>
                             <Link
-                                href="#"
-                                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
+                                href="/campaign"
+                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
                                 <Grid2x2Check className="h-4 w-4" />
                                 Campaign
@@ -190,7 +190,7 @@ export default function RootLayout({
                                 </Link>
                                 <Link
                                     href="#"
-                                    className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary"
                                 >
                                     <Grid2x2Check className="h-4 w-4" />
                                     Campaign

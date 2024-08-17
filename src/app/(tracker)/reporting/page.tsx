@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { CallChart } from "@/app-component/reporting/CallChart"
 
 export default function Page() {
     return (
@@ -7,9 +7,8 @@ export default function Page() {
                 <h1 className="text-lg font-semibold md:text-2xl">Reporting</h1>
             </div>
             <div
-                className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm" x-chunk="dashboard-02-chunk-1"
-            >
                 
+            >
             </div>
         </div>
     )
