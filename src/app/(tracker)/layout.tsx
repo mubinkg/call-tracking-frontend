@@ -92,7 +92,7 @@ export default function RootLayout({
                             </Link>
                             <Collapsible>
                                 <CollapsibleTrigger>
-                                    <div className="flex items-center gap-[40px] rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary">
+                                    <div className="flex items-center gap-[40px] rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary [&[data-state=open]>svg]:rotate-90">
                                         <div className="flex gap-2 items-center">
                                             <Table className="h-4 w-4" />
                                             Phone Numbers
@@ -100,23 +100,36 @@ export default function RootLayout({
                                         <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
                                     </div>
                                 </CollapsibleTrigger>
-                                <CollapsibleContent className="px-9 pt-2">
+                                <CollapsibleContent className="px-9 pt-3">
                                     <Link href="">
                                         Tracking Numbers
                                     </Link>
                                 </CollapsibleContent>
-                                <CollapsibleContent className="px-9 py-2">
+                                <CollapsibleContent className="px-9 py-3">
                                     <Link href="">
                                         Number Pools
                                     </Link></CollapsibleContent>
                             </Collapsible>
-                            <Link
-                                href="#"
-                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                            >
-                                <Route className="h-4 w-4" />
-                                Destinations
-                            </Link>
+                            <Collapsible>
+                                <CollapsibleTrigger>
+                                    <div className="flex items-center gap-[64px] rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary [&[data-state=open]>svg]:rotate-90">
+                                        <div className="flex gap-2 items-center">
+                                            <Route className="h-4 w-4" />
+                                            Destinations
+                                        </div>
+                                        <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                                    </div>
+                                </CollapsibleTrigger>
+                                <CollapsibleContent className="px-9 pt-3">
+                                    <Link href="">
+                                        Manage Destinations
+                                    </Link>
+                                </CollapsibleContent>
+                                <CollapsibleContent className="px-9 py-3">
+                                    <Link href="">
+                                        Manage Groups
+                                    </Link></CollapsibleContent>
+                            </Collapsible>
                             <Link
                                 href="#"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
