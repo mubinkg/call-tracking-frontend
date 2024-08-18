@@ -14,7 +14,8 @@ import {
     Table,
     Route,
     ChartBarIncreasing,
-    Send
+    Send,
+    ChevronRightIcon
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -29,6 +30,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ToggleMode } from "@/app-component/ToggleMode"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 
 export default function RootLayout({
     children,
@@ -82,19 +84,32 @@ export default function RootLayout({
                                 Campaign
                             </Link>
                             <Link
-                                href="#"
+                                href="call-flows"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
                                 <Waypoints className="h-4 w-4" />
                                 Call Flows
                             </Link>
-                            <Link
-                                href="#"
-                                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                            >
-                                <Table className="h-4 w-4" />
-                                Phone Numbers
-                            </Link>
+                            <Collapsible>
+                                <CollapsibleTrigger>
+                                    <div className="flex items-center gap-[40px] rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary">
+                                        <div className="flex gap-2 items-center">
+                                            <Table className="h-4 w-4" />
+                                            Phone Numbers
+                                        </div>
+                                        <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                                    </div>
+                                </CollapsibleTrigger>
+                                <CollapsibleContent className="px-9 pt-2">
+                                    <Link href="">
+                                        Tracking Numbers
+                                    </Link>
+                                </CollapsibleContent>
+                                <CollapsibleContent className="px-9 py-2">
+                                    <Link href="">
+                                        Number Pools
+                                    </Link></CollapsibleContent>
+                            </Collapsible>
                             <Link
                                 href="#"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
@@ -262,7 +277,7 @@ export default function RootLayout({
                         <Bell className="h-[1rem] w-[1rem] scale-100" />
                         <span className="sr-only">Toggle notifications</span>
                     </Button>
-                    <ToggleMode/>
+                    <ToggleMode />
                 </header>
                 {children}
             </div>
