@@ -106,7 +106,7 @@ export default function RootLayout({
                                     </Link>
                                 </CollapsibleContent>
                                 <CollapsibleContent className="px-9 py-3">
-                                    <Link href="">
+                                    <Link href="number-pools">
                                         Number Pools
                                     </Link></CollapsibleContent>
                             </Collapsible>
