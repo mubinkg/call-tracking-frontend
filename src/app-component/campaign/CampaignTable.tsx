@@ -13,7 +13,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -21,9 +21,6 @@ import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
@@ -36,137 +33,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-const data: Payment[] = [
-  {
-    id: "m5gr84i9",
-    amount: 316,
-    progress: "success",
-    email: "ken99@yahoo.com",
-    campaign: 'first',
-    live: 0,
-    hourly: 0,
-    daily: 0,
-    monthly: 0,
-    global: 0
-  }
-]
-
-export type Payment = {
-  id: string
-  amount: number
-  progress: "pending" | "processing" | "success" | "failed"
-  email: string,
-  campaign: string,
-  live: number,
-  hourly: number,
-  daily: number,
-  monthly: number,
-  global: number
-}
-
-export const columns: ColumnDef<Payment>[] = [
-  {
-    id: "select",
-    header: ({ table }) => (
-      <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
-        }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
-  {
-    accessorKey: "progress",
-    header: "PROGRESS",
-    cell: ({ row }) => <div>{row.getValue("progress")}</div>,
-  },
-  {
-    accessorKey: "campaign",
-    header: "CAMPAIGN",
-    cell: ({ row }) => <div>{row.getValue("campaign")}</div>,
-  },
-  {
-    accessorKey: "live",
-    header: "LIVE",
-    cell: ({ row }) => <div className="lowercase">{row.getValue("live")}</div>,
-  },
-  {
-    accessorKey: "hourly",
-    header: "HOURLY",
-    cell: ({ row }) => <div className="lowercase">{row.getValue("hourly")}</div>,
-  },
-  {
-    accessorKey: "daily",
-    header: "DAILY",
-    cell: ({ row }) => <div className="lowercase">{row.getValue("daily")}</div>,
-  },
-  {
-    accessorKey: "monthly",
-    header: "MONTHLY",
-    cell: ({ row }) => <div className="lowercase">{row.getValue("monthly")}</div>,
-  },
-  {
-    accessorKey: "global",
-    header: "GLOBAL",
-    cell: ({ row }) => <div className="lowercase">{row.getValue("global")}</div>,
-  },
-  {
-    accessorKey: "status",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-        >
-          STATUS
-        </Button>
-      )
-    },
-    cell: ({ row }) => (<div className="lowercase">Change Status</div>),
-  },
-  {
-    id: "actions",
-    enableHiding: false,
-    cell: ({ row }) => {
-      const payment = row.original
-
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      )
-    },
-  },
-]
-
-export default function CampaignTable() {
+export default function CampaignTable({columns, data}:any) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
