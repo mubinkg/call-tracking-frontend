@@ -56,14 +56,14 @@ export default function RootLayout({
                                 Search
                             </Link>
                             <Link
-                                href="#"
+                                href="/workspace"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
                                 <Settings className="h-4 w-4" />
                                 Workspace Setting
                             </Link>
                             <Link
-                                href="#"
+                                href="/starter"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
                                 <HeartHandshake className="h-4 w-4" />
@@ -168,7 +168,7 @@ export default function RootLayout({
                                 </CollapsibleContent>
                                 <CollapsibleContent className="px-9 py-3">
                                     <Link href="/blocked-numbers">
-                                    Blocked Numbers
+                                        Blocked Numbers
                                     </Link></CollapsibleContent>
                             </Collapsible>
                             <div className="felx absolute bottom-[50px]">
@@ -207,7 +207,7 @@ export default function RootLayout({
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="left" className="flex flex-col">
-                            <nav className="grid gap-2 text-lg font-medium">
+                            <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
                                 <Link
                                     href="#"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
@@ -216,75 +216,121 @@ export default function RootLayout({
                                     Search
                                 </Link>
                                 <Link
-                                    href="#"
+                                    href="/workspace"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
                                     <Settings className="h-4 w-4" />
                                     Workspace Setting
                                 </Link>
                                 <Link
-                                    href="#"
+                                    href="/starter"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
                                     <HeartHandshake className="h-4 w-4" />
                                     Getting Started
                                 </Link>
                                 <Link
-                                    href="#"
+                                    href="/reporting"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
                                     <CircleCheckBig className="h-4 w-4" />
                                     Reporting
                                 </Link>
                                 <Link
-                                    href="#"
-                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary"
+                                    href="/campaign"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
                                     <Grid2x2Check className="h-4 w-4" />
                                     Campaign
                                 </Link>
                                 <Link
-                                    href="#"
+                                    href="call-flows"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
                                     <Waypoints className="h-4 w-4" />
                                     Call Flows
                                 </Link>
+                                <Collapsible>
+                                    <CollapsibleTrigger>
+                                        <div className="flex items-center gap-[40px] rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary [&[data-state=open]>svg]:rotate-90">
+                                            <div className="flex gap-2 items-center">
+                                                <Table className="h-4 w-4" />
+                                                Phone Numbers
+                                            </div>
+                                            <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                                        </div>
+                                    </CollapsibleTrigger>
+                                    <CollapsibleContent className="px-9 pt-3">
+                                        <Link href="tracking-numbers">
+                                            Tracking Numbers
+                                        </Link>
+                                    </CollapsibleContent>
+                                    <CollapsibleContent className="px-9 py-3">
+                                        <Link href="number-pools">
+                                            Number Pools
+                                        </Link></CollapsibleContent>
+                                </Collapsible>
+                                <Collapsible>
+                                    <CollapsibleTrigger>
+                                        <div className="flex items-center gap-[64px] rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary [&[data-state=open]>svg]:rotate-90">
+                                            <div className="flex gap-2 items-center">
+                                                <Route className="h-4 w-4" />
+                                                Destinations
+                                            </div>
+                                            <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                                        </div>
+                                    </CollapsibleTrigger>
+                                    <CollapsibleContent className="px-9 pt-3">
+                                        <Link href="/manage-destinations">
+                                            Manage Destinations
+                                        </Link>
+                                    </CollapsibleContent>
+                                    <CollapsibleContent className="px-9 py-3">
+                                        <Link href="/manage-groups">
+                                            Manage Groups
+                                        </Link></CollapsibleContent>
+                                </Collapsible>
                                 <Link
-                                    href="#"
-                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                                >
-                                    <Table className="h-4 w-4" />
-                                    Phone Numbers
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-                                >
-                                    <Route className="h-4 w-4" />
-                                    Destinations
-                                </Link>
-                                <Link
-                                    href="#"
+                                    href="/buyers"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
                                     <Users className="h-4 w-4" />
                                     Buyers
                                 </Link>
                                 <Link
-                                    href="#"
+                                    href="/vendors"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
                                     <ChartBarIncreasing className="h-4 w-4" />
                                     Vendors
                                 </Link>
                                 <Link
-                                    href="#"
+                                    href="/traffic-source"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
                                     <Send className="h-4 w-4" />
                                     Traffic Source
                                 </Link>
+                                <Collapsible>
+                                    <CollapsibleTrigger>
+                                        <div className="flex items-center gap-[64px] rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary [&[data-state=open]>svg]:rotate-90">
+                                            <div className="flex gap-2 items-center">
+                                                <Route className="h-4 w-4" />
+                                                Suppression List
+                                            </div>
+                                            <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                                        </div>
+                                    </CollapsibleTrigger>
+                                    <CollapsibleContent className="px-9 pt-3">
+                                        <Link href="/voip-sheild">
+                                            VoIP Sheild
+                                        </Link>
+                                    </CollapsibleContent>
+                                    <CollapsibleContent className="px-9 py-3">
+                                        <Link href="/blocked-numbers">
+                                            Blocked Numbers
+                                        </Link></CollapsibleContent>
+                                </Collapsible>
                                 <div className="felx absolute bottom-[50px]">
                                     <DropdownMenu>
                                         <DropdownMenuTrigger asChild>
