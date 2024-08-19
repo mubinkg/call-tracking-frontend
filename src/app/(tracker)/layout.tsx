@@ -121,12 +121,12 @@ export default function RootLayout({
                                     </div>
                                 </CollapsibleTrigger>
                                 <CollapsibleContent className="px-9 pt-3">
-                                    <Link href="">
+                                    <Link href="/manage-destinations">
                                         Manage Destinations
                                     </Link>
                                 </CollapsibleContent>
                                 <CollapsibleContent className="px-9 py-3">
-                                    <Link href="">
+                                    <Link href="/manage-groups">
                                         Manage Groups
                                     </Link></CollapsibleContent>
                             </Collapsible>
