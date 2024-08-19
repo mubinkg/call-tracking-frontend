@@ -63,6 +63,16 @@ export default function page() {
             cell: ({ row }) => <div>{row.getValue("idealLimit")}</div>,
         },
         {
+            accessorKey: "impressing",
+            header: "IMPRESSIONS",
+            cell: ({ row }) => <div>{row.getValue("impressions")}</div>,
+        },
+        {
+            accessorKey: "misses",
+            header: "MISSES",
+            cell: ({ row }) => <div>{row.getValue("misses")}</div>,
+        },
+        {
             header: "ACTION",
             cell: ({ row }) => <div>Action</div>,
         },
