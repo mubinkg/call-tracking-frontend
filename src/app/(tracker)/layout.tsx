@@ -145,12 +145,32 @@ export default function RootLayout({
                                 Vendors
                             </Link>
                             <Link
-                                href="#"
+                                href="/traffic-source"
                                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                             >
                                 <Send className="h-4 w-4" />
                                 Traffic Source
                             </Link>
+                            <Collapsible>
+                                <CollapsibleTrigger>
+                                    <div className="flex items-center gap-[64px] rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary [&[data-state=open]>svg]:rotate-90">
+                                        <div className="flex gap-2 items-center">
+                                            <Route className="h-4 w-4" />
+                                            Suppression List
+                                        </div>
+                                        <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
+                                    </div>
+                                </CollapsibleTrigger>
+                                <CollapsibleContent className="px-9 pt-3">
+                                    <Link href="/voip-sheild">
+                                        VoIP Sheild
+                                    </Link>
+                                </CollapsibleContent>
+                                <CollapsibleContent className="px-9 py-3">
+                                    <Link href="/blocked-numbers">
+                                    Blocked Numbers
+                                    </Link></CollapsibleContent>
+                            </Collapsible>
                             <div className="felx absolute bottom-[50px]">
                                 <DropdownMenu>
                                     <DropdownMenuTrigger asChild>
