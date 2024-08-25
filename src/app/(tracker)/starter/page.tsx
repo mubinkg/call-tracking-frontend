@@ -4,7 +4,7 @@ import { BookText, Fence, Lightbulb, MessageCircleIcon, SearchIcon } from "lucid
 export default function page() {
     return (
         <div>
-            <div className="flex items-center justify-center my-[40px]">
+            <div className="flex items-center justify-center my-[40px] max-md:mx-[2rem]">
                 <div className="lg:w-8/12 md:w-11/12">
                     <h1 className="text-[30px] my-4">Welcome to Dialics</h1>
                     <p className="text-xs text-slate-300">This is a page with some helpful tips and resources to start using Dialics</p>
@@ -18,7 +18,7 @@ export default function page() {
             <div className="flex items-center justify-center my-4">
                 <div className="lg:w-8/12 md:w-11/12">
                     <h1 className="my-4">Useful Links</h1>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-3 max-md:grid-cols-1 gap-4">
                         <LinkContainer
                             icon={<SearchIcon/>}
                             title="Help Center"
