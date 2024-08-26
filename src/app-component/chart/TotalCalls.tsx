@@ -41,11 +41,11 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function HomeChart() {
+export function TotalCalls() {
   return (
     <Card>
       <CardHeader className="mx-auto">
-        <CardTitle className="text-center text-sm">CALLS BY:HOUR</CardTitle>
+        <CardTitle className="text-center text-sm">TOTAL CALLS</CardTitle>
       </CardHeader>
       <CardContent>
         <ChartContainer className="aspect-auto h-[300px] w-full" config={chartConfig}>
